@@ -76,27 +76,18 @@ def load_tasks():
 load_tasks()
 
 while True:
-    print("\n1. Show Tasks")
-    print("2. Add Task")
-    print("3. Delete Task")
-    print("4. Mark Task as Done")
-    print("5. Clear Tasks")
-    print("6. Exit")
-    choice = s_input("Enter your choice: ")
-    if choice is None:
-        continue
-    if choice == 1:
-        show_tasks()
-    elif choice == 2:
-        add_task()
-    elif choice == 3:
-        delete_task()
-    elif choice == 4:
-        mark_done()
-    elif choice == 5:
-        clear_tasks()
-    elif choice == 6:
-        print("Exiting...")
-        break
-    else:
-        print("Invalid choice!!")
+    print("\n***** Available Operations *****")
+    print("1. Show tasks\n2. Add Task\n3. Delete Task\n4. Mark task as done\n5. Clear Tasks\n6. Exit")
+    print("*********************************")
+    try:
+        choice = int(input("Enter your choice: "))
+        if choice == 1: show_tasks()
+        elif choice == 2: add_task()
+        elif choice == 3: delete_task()
+        elif choice == 4: mark_done()
+        elif choice == 5: clear_tasks()
+        elif choice == 6: 
+            print("Exiting....")
+            break
+    except:
+        print("Invalid Choice.")
